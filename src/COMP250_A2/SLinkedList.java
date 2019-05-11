@@ -1,4 +1,3 @@
-package assignments2018.a2template;
 import java.lang.Iterable;
 import java.util.Iterator;
 
@@ -223,16 +222,18 @@ public class SLinkedList<E extends DeepClone<E>> implements Iterable<E>
  	 *  TODO: Makes a deep copy of the this linked list.
  	 *  Hint: Use E.deepCopy().
  	 */
- 	public SLinkedList<E> deepClone()
- 	{
- 		SLinkedList<E> newList = new SLinkedList<E>();
+ 	public SLinkedList<E> deepClone() {
  		
- 		if (size = 0) {
+ 		SLinkedList<E> newList = new SLinkedList<E>();
+ 		int i = 0;
+ 		
+ 		if (size == 0) {
  			return null;
  		}
  		
- 		for (int i = 0; i < size; i++) {
- 			newList.add(this.get(i));
+ 		for (E node : this) {
+ 			newList.add( i, node);
+ 			i++;
  		}
  		
  		return newList;

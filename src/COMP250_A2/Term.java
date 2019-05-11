@@ -1,4 +1,3 @@
-package assignments2018.a2template;
 import java.math.BigInteger;
 
 /* 
