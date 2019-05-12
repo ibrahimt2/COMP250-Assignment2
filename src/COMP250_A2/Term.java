@@ -1,12 +1,14 @@
 import java.math.BigInteger;
 
 /* 
+ * 
  * This class Term represents a single term in the polynomial
  * 
  * The terms with zero coefficients should be removed from the 
  * representation.
  * 
  * Under no circumstances the exponent should be negative.
+ * 
  */
 
 public class Term implements DeepClone<Term> {

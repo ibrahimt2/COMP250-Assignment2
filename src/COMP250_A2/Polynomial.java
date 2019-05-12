@@ -1,5 +1,3 @@
-package assignments2018.a2template;
-
 import java.math.BigInteger;
 
 public class Polynomial 
@@ -31,20 +29,7 @@ public class Polynomial
 	 */
 	public void addTerm(Term t)
 	{	
-		/**** ADD CODE HERE ****/
-		
-		// Hint: Notice that the function SLinkedList.get(index) method is O(n), 
-		// so if this method were to call the get(index) 
-		// method n times then the method would be O(n^2).
-		// Instead, use a Java enhanced for loop to iterate through 
-		// the terms of an SLinkedList.
-		/*
-		for (Term currentTerm: polynomial)
-		{
-			// The for loop iterates over each term in the polynomial!!
-			// Example: System.out.println(currentTerm.getExponent()) should print the exponents of each term in the polynomial when it is not empty.  
-		}
-		*/
+		polynomial.addLast(t);
 	}
 	
 	public Term getTerm(int index)
@@ -56,6 +41,7 @@ public class Polynomial
 	public static Polynomial add(Polynomial p1, Polynomial p2)
 	{
 		/**** ADD CODE HERE ****/
+		
 		
 		return null;
 	}

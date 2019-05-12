@@ -222,18 +222,23 @@ public class SLinkedList<E extends DeepClone<E>> implements Iterable<E>
  	 *  TODO: Makes a deep copy of the this linked list.
  	 *  Hint: Use E.deepCopy().
  	 */
+	
+	/*
+	 * Steps through the existing singly linked list using a for each loop and uses 
+	 * the add method to add nodes to a new linked list, keeping track of where to add
+	 * them using i, a variable that is incremented every for-each loop
+	 * 
+	 */
  	public SLinkedList<E> deepClone() {
  		
  		SLinkedList<E> newList = new SLinkedList<E>();
- 		int i = 0;
  		
  		if (size == 0) {
  			return null;
  		}
  		
  		for (E node : this) {
- 			newList.add( i, node);
- 			i++;
+ 			newList.addLast(node);
  		}
  		
  		return newList;
