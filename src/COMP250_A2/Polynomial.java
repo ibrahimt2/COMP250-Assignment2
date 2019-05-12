@@ -1,3 +1,5 @@
+package COMP250_A2;
+
 import java.math.BigInteger;
 
 public class Polynomial 
@@ -29,7 +31,43 @@ public class Polynomial
 	 */
 	public void addTerm(Term t)
 	{	
-		polynomial.addLast(t);
+		//Used to keep track of whether the term has been added to the polynomial yet
+		boolean termAdded = false; 
+		
+		//This for loop finds a term with a matching coefficient if present, and 
+		//Adds the added term's coefficient to the existing term with the same 
+		//coefficient
+		
+		for (Term term : polynomial) {
+			if (t.getExponent() == term.getExponent()) {
+				term.setCoefficient(t.getCoefficient().add(term.getCoefficient()));
+			termAdded = true; 
+			}
+		}
+		
+		//If termAdded here is false, then we know that a term with the
+		//same exponent does not exist, so we'll need to add a new term.
+		
+		//In order to maintain decreasing exponential order, it will be before 
+		//the term with a lower exponent
+		
+		if (!termAdded) {
+			//Keeps track of where the exponent should be added
+			int i = 0;  	
+			for (Term term : polynomial) {
+				
+				//If entered term exponent is larger than current term exponent, it is added 
+				if (t.getExponent() > term.getExponent()) {
+					polynomial.add(i, t);
+					//When a term has been added, the for-each loop will be exited
+					break;					
+				}
+				i++;
+			}
+		}
+		
+		
+		
 	}
 	
 	public Term getTerm(int index)

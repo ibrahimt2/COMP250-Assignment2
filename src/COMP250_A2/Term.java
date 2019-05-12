@@ -1,3 +1,5 @@
+package COMP250_A2;
+
 import java.math.BigInteger;
 
 /* 
